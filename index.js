@@ -8,6 +8,10 @@ const patientModel = require("./patientSchema");
 // define a port
 let Port = process.env.PORT || 4000;
 // routes and controller (minimal code)
+app.get("/", () => {
+  console.log("App is working..");
+});
+// postPatient + route + controller
 app.post("/postPatient", async (req, res) => {
   try {
     let pateints = new patientModel(req.body);
